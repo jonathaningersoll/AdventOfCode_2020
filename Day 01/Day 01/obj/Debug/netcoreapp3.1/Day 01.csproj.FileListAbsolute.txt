@@ -1,0 +1,15 @@
+C:\Users\jonat\source\repos\AdventOfCode\Day 01\Day 01\bin\Debug\netcoreapp3.1\Day 01.exe
+C:\Users\jonat\source\repos\AdventOfCode\Day 01\Day 01\bin\Debug\netcoreapp3.1\Day 01.deps.json
+C:\Users\jonat\source\repos\AdventOfCode\Day 01\Day 01\bin\Debug\netcoreapp3.1\Day 01.runtimeconfig.json
+C:\Users\jonat\source\repos\AdventOfCode\Day 01\Day 01\bin\Debug\netcoreapp3.1\Day 01.runtimeconfig.dev.json
+C:\Users\jonat\source\repos\AdventOfCode\Day 01\Day 01\bin\Debug\netcoreapp3.1\Day 01.dll
+C:\Users\jonat\source\repos\AdventOfCode\Day 01\Day 01\bin\Debug\netcoreapp3.1\Day 01.pdb
+C:\Users\jonat\source\repos\AdventOfCode\Day 01\Day 01\obj\Debug\netcoreapp3.1\Day 01.csprojAssemblyReference.cache
+C:\Users\jonat\source\repos\AdventOfCode\Day 01\Day 01\obj\Debug\netcoreapp3.1\Day 01.AssemblyInfoInputs.cache
+C:\Users\jonat\source\repos\AdventOfCode\Day 01\Day 01\obj\Debug\netcoreapp3.1\Day 01.AssemblyInfo.cs
+C:\Users\jonat\source\repos\AdventOfCode\Day 01\Day 01\obj\Debug\netcoreapp3.1\Day 01.csproj.CoreCompileInputs.cache
+C:\Users\jonat\source\repos\AdventOfCode\Day 01\Day 01\obj\Debug\netcoreapp3.1\Day 01.dll
+C:\Users\jonat\source\repos\AdventOfCode\Day 01\Day 01\obj\Debug\netcoreapp3.1\Day 01.pdb
+C:\Users\jonat\source\repos\AdventOfCode\Day 01\Day 01\obj\Debug\netcoreapp3.1\Day 01.genruntimeconfig.cache
+C:\Users\jonat\source\repos\AdventOfCode\Day 01\Day 01\bin\Debug\netcoreapp3.1\input.txt
+C:\Users\jonat\source\repos\AdventOfCode\Day 01\Day 01\bin\Debug\netcoreapp3.1\testinput.txt
