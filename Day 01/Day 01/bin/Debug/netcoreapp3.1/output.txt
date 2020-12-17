@@ -1,1 +1,0 @@
-First number: 1073, Second number: 947, sum: 2020, Answer: 1016131
