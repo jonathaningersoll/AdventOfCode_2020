@@ -1,0 +1,15 @@
+C:\Users\jonat\source\repos\AdventOfCode_2020\Day 03\Day 04\bin\Debug\netcoreapp3.1\Day 04.exe
+C:\Users\jonat\source\repos\AdventOfCode_2020\Day 03\Day 04\bin\Debug\netcoreapp3.1\Day 04.deps.json
+C:\Users\jonat\source\repos\AdventOfCode_2020\Day 03\Day 04\bin\Debug\netcoreapp3.1\Day 04.runtimeconfig.json
+C:\Users\jonat\source\repos\AdventOfCode_2020\Day 03\Day 04\bin\Debug\netcoreapp3.1\Day 04.runtimeconfig.dev.json
+C:\Users\jonat\source\repos\AdventOfCode_2020\Day 03\Day 04\bin\Debug\netcoreapp3.1\Day 04.dll
+C:\Users\jonat\source\repos\AdventOfCode_2020\Day 03\Day 04\bin\Debug\netcoreapp3.1\Day 04.pdb
+C:\Users\jonat\source\repos\AdventOfCode_2020\Day 03\Day 04\obj\Debug\netcoreapp3.1\Day 04.csprojAssemblyReference.cache
+C:\Users\jonat\source\repos\AdventOfCode_2020\Day 03\Day 04\obj\Debug\netcoreapp3.1\Day 04.AssemblyInfoInputs.cache
+C:\Users\jonat\source\repos\AdventOfCode_2020\Day 03\Day 04\obj\Debug\netcoreapp3.1\Day 04.AssemblyInfo.cs
+C:\Users\jonat\source\repos\AdventOfCode_2020\Day 03\Day 04\obj\Debug\netcoreapp3.1\Day 04.csproj.CoreCompileInputs.cache
+C:\Users\jonat\source\repos\AdventOfCode_2020\Day 03\Day 04\obj\Debug\netcoreapp3.1\Day 04.dll
+C:\Users\jonat\source\repos\AdventOfCode_2020\Day 03\Day 04\obj\Debug\netcoreapp3.1\Day 04.pdb
+C:\Users\jonat\source\repos\AdventOfCode_2020\Day 03\Day 04\obj\Debug\netcoreapp3.1\Day 04.genruntimeconfig.cache
+C:\Users\jonat\source\repos\AdventOfCode_2020\Day 03\Day 04\bin\Debug\netcoreapp3.1\input.txt
+C:\Users\jonat\source\repos\AdventOfCode_2020\Day 03\Day 04\bin\Debug\netcoreapp3.1\testinput.txt
