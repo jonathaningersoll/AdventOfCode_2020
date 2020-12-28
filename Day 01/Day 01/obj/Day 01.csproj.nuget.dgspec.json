@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jonat\\source\\repos\\AdventOfCode\\Day 01\\Day 01\\Day 01.csproj": {}
+    "C:\\Users\\jonat\\source\\repos\\AdventOfCode_2020\\Day 01\\Day 01\\Day 01.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jonat\\source\\repos\\AdventOfCode\\Day 01\\Day 01\\Day 01.csproj": {
+    "C:\\Users\\jonat\\source\\repos\\AdventOfCode_2020\\Day 01\\Day 01\\Day 01.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonat\\source\\repos\\AdventOfCode\\Day 01\\Day 01\\Day 01.csproj",
+        "projectUniqueName": "C:\\Users\\jonat\\source\\repos\\AdventOfCode_2020\\Day 01\\Day 01\\Day 01.csproj",
         "projectName": "Day 01",
-        "projectPath": "C:\\Users\\jonat\\source\\repos\\AdventOfCode\\Day 01\\Day 01\\Day 01.csproj",
+        "projectPath": "C:\\Users\\jonat\\source\\repos\\AdventOfCode_2020\\Day 01\\Day 01\\Day 01.csproj",
         "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonat\\source\\repos\\AdventOfCode\\Day 01\\Day 01\\obj\\",
+        "outputPath": "C:\\Users\\jonat\\source\\repos\\AdventOfCode_2020\\Day 01\\Day 01\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -52,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
