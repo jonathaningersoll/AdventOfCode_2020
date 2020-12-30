@@ -38,6 +38,21 @@ namespace Day_05
             }
 
             Console.WriteLine(seatIds.Max());
+
+            // PART TWO:
+            seatIds.Sort();
+            seatIds.ForEach((x) => Console.WriteLine(x));
+            for(int i = 1; i < seatIds.Count(); i++)
+            {
+                if(seatIds[i] - i == seatIds[0])
+                {
+                    Console.WriteLine("Consecutive number");
+                }
+                else
+                {
+                    Console.WriteLine($"*****************************************{seatIds[i]}");
+                }
+            }
         }
 
         // ROW FINDING METHODS //
