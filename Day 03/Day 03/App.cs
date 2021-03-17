@@ -17,6 +17,8 @@ namespace Day_03
             Ui();
         }
 
+
+        // UI for selecting which part of the puzzle to run
         public void Ui()
         {
             Console.WriteLine("Which program would you like to run?\n" +
@@ -139,30 +141,29 @@ namespace Day_03
             return cont;
         }
 
+
+        // Takes two integers, the row number and the distance, and returns the column as an int.
         public int GetColumn(int row, int distance)
         {
             int column = row * distance;
             return column;
         }
 
+
+        // Takes two ints and returns the modulus of the two.
         public int GetRemainder(int pos, int line)
         {
             return pos % line;
         }
 
-        public char GetCharacter(string position)
-        {
-            {
-                Console.WriteLine(position);
-                return char.Parse(position);
-            }
-        }
 
         public bool EvaluateChar(char c)
         {
             return (c == '#');
         }
 
+
+        // Takes the slope of the hill and returns the amount of trees hit for the given slope.
         public int TreeCalculator(int rise, int run)
         {
             List<string> input = File.ReadAllLines(@"./input.txt").Select(l => l).ToList();
