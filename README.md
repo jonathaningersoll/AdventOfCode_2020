@@ -107,3 +107,11 @@ pt.2 - Now determine the number of #s you would encounter if, for each of the fo
 1. Query how far to the right and how many lines down the user will be traveling (essentially the slope)
 2. Use the slope as the argument for TreeCalculator() which calculates the amount of #s hit for the given slope. This code is more modular and will work with pt.1 as well.
 
+## Day04
+
+### Overview:
+pt. 1 -
+pt. 2 -
+
+### pt.1 Solution:
+### pt.2 Solution:
