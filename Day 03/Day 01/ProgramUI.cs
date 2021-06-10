@@ -7,9 +7,9 @@ namespace Day_01
 {
     class ProgramUI
     {
-        private readonly Dayoneservice _service;
+        private readonly IDayOneService _service;
         private readonly Dayoneinputs _inputs;
-        public ProgramUI(Dayoneservice service, Dayoneinputs inputs)
+        public ProgramUI(IDayOneService service, Dayoneinputs inputs)
         {
             _service = service;
             _inputs = inputs;

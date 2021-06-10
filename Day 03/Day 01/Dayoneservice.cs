@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Day_01
 {
-    public class Dayoneservice
+    public class Dayoneservice : IDayOneService
     {
 
         /// <summary>
