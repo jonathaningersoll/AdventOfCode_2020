@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Day_01
 {
-    class Dayoneinputs
+    class Dayoneinputs : IDayOneInputs
     {
         public Dayoneinputs()
         {
@@ -22,7 +22,7 @@ namespace Day_01
         ///     - For each line in the array, parse each string to int and enqueue the new line.
         ///     - Return the Queue.
         /// </summary>
-        private Queue<int> EnqueueFile(string file)
+        public Queue<int> EnqueueFile(string file)
         {
             Queue<int> newQueue = new Queue<int>();                 // Make a new queue
             string[] lines = File.ReadAllLines(file);               // Read the lines from the file into an array
@@ -40,7 +40,7 @@ namespace Day_01
         ///     - For each string in the array, parse to integer, and add to a list.
         ///     - Return the list.
         /// </summary>
-        private List<int> ListFile(string file)
+        public List<int> ListFile(string file)
         {
             List<int> newList = new List<int>();                // Create a new list of integers
             var lines = File.ReadAllLines(file);                // Read all the lines into an array of 

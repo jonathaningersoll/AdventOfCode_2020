@@ -2,7 +2,8 @@
   "runtimeOptions": {
     "additionalProbingPaths": [
       "C:\\Users\\jonat\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\jonat\\.nuget\\packages"
+      "C:\\Users\\jonat\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ]
   }
 }
