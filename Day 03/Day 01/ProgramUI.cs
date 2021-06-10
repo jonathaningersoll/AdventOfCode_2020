@@ -7,6 +7,13 @@ namespace Day_01
 {
     class ProgramUI
     {
+        private readonly Dayoneservice _service;
+        private readonly Dayoneinputs _inputs;
+        public ProgramUI(Dayoneservice service, Dayoneinputs inputs)
+        {
+            _service = service;
+            _inputs = inputs;
+        }
         public void VerboseMenu()
         {
             Run();
@@ -45,13 +52,14 @@ namespace Day_01
             {
                 case "1":
                     {
-                        MultiplyTwo(EnqueueFile(file));
+                        PartOne();
+                        // MultiplyTwo(_inputs.EnqueuedFile);
                         break;
                     }
                 case "2":
                     {
                         Console.WriteLine("Adding three numbers to find 2020, then multiplying the numbers...");
-                        MultiplyThree(InputList(file));
+                        MultiplyThreeNumbers(InputList(file));
                         break;
                     }
                 default:
@@ -144,7 +152,7 @@ namespace Day_01
         /// is less than 2020, and if it is, loop over the list again adding the previous sum to each number. If the sum of those
         /// three numbers equals 2020, multiply all three numbers together and the result is your answer.
         /// </summary>
-        public void MultiplyThree(List<int> numberList)
+        public void MultiplyThreeNumbers(List<int> numberList)
         {
             for (int i = 0; i < numberList.Count; i++)                      // Loop 1 - Loop over the list
             {
@@ -171,6 +179,15 @@ namespace Day_01
                         }
                     }
                 }
+            }
+        }
+
+        public void PartOne()
+        {
+            Console.WriteLine("Searching for solution...");
+            if(_inputs.EnqueuedFile != null)
+            {
+                Console.WriteLine($"Answer: {_service.MultiplyTwoNumbers(_inputs.EnqueuedFile)}");
             }
         }
     }
