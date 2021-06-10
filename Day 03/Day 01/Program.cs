@@ -6,9 +6,7 @@ namespace Day_01
     {
         static void Main(string[] args)
         {
-            var inputs = new Dayoneinputs();
-            var service = new Dayoneservice();
-            ProgramUI ui = new ProgramUI(service, inputs);
+            ProgramUI ui = new ProgramUI(new Dayoneservice(), new Dayoneinputs());
             ui.VerboseMenu();
         }
     }

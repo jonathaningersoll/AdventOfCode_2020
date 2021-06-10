@@ -7,9 +7,9 @@ namespace Day_01
 {
     class ProgramUI
     {
-        private readonly Dayoneservice _service;
-        private readonly Dayoneinputs _inputs;
-        public ProgramUI(Dayoneservice service, Dayoneinputs inputs)
+        private readonly IDayOneService _service;
+        private readonly IDayOneInputs _inputs;
+        public ProgramUI(IDayOneService service, IDayOneInputs inputs)
         {
             _service = service;
             _inputs = inputs;
@@ -41,8 +41,6 @@ namespace Day_01
         /// </summary>
         private void Run()
         {
-            // var file = @"./input.txt";
-            // var file = @"./testinput.txt";
             Console.WriteLine("Which program would you like to run?");
             Console.WriteLine("1. Multiply two numbers to get 2020\n" +
                 "2. Multiply three numbers to get 2020");
