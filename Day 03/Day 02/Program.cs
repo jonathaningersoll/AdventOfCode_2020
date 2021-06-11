@@ -6,7 +6,7 @@ namespace Day_02
     {
         static void Main(string[] args)
         {
-            AppUI app = new AppUI();
+            AppUI app = new AppUI(new PasswordPhilosophyService(), new DayTwoInput());
             app.Run();
         }
     }

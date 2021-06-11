@@ -7,10 +7,55 @@ namespace Day_02
 {
     class AppUI
     {
+        private readonly IPasswordPhilosophyService _service;
+        private readonly IDayTwoInput _input;
+
+        public AppUI(IPasswordPhilosophyService service, IDayTwoInput input)
+        {
+            _input = input;
+            _service = service;
+        }
         public void Run()
         {
             ConsoleInterface();
         }
+
+        private void ConsoleInterface()
+        {
+            Console.WriteLine("Please select the puzzle part you wish to complete: \n" +
+                "1. Part 1\n" +
+                "2. Part 2\n" +
+                "3. Exit");
+            string ans = Console.ReadLine();
+            switch (ans)
+            {
+                case "1":
+                    {
+                        PasswordPhilosophyPartOne();
+                        break;
+                    }
+                case "2":
+                    {
+                        PasswordPhilosophyPartTwo();
+                        break;
+                    }
+            }
+        }
+
+        public void PasswordPhilosophyPartOne()
+        {
+            Console.WriteLine(_service.CountValidPasswords(_input.Input));
+        }
+
+
+        public void PasswordPhilosophyPartTwo()
+        {
+            Console.WriteLine(_service.CountValidPasswordsNewPolicy(_input.Input));
+        }
+
+
+
+
 
 //  --- Day 2: Password Philosophy ---
 
@@ -40,46 +85,48 @@ namespace Day_02
 //          2-9 c: ccccccccc is invalid: both position 2 and position 9 contain c.
 //  How many passwords are valid according to the new interpretation of the policies?
 
-        private void ConsoleInterface()
-        {
-            // Read all the lines of the input file into a string array:
-            string[] inputLines = File.ReadAllLines(@"./input.txt");
 
-            // Set a variable to keep track of all valid passwords.
-            int validPasswords = 0;
+        //Old Code:
+        //private void ConsoleInterface()
+        //{
+        //    // Read all the lines of the input file into a string array:
+        //    string[] inputLines = File.ReadAllLines(@"./input.txt");
 
-            // This foreach iterates through each line in the file and separates
-            //  the necessary values into their own variables.
-            foreach (string line in inputLines)
-            {
-                // Split each line at each space
-                string[] phrase = line.Split(' ');
-                // Now I have an array of one of the lines in the file.
-                // At phrase[0] is the requirements (1-3).
-                // At phrase[1] is the required character (a).
-                // At phrase[2] is the actual password (abcde).
+        //    // Set a variable to keep track of all valid passwords.
+        //    int validPasswords = 0;
 
-                // Split the phrase into three sections: Requirements(reqs), Required Character(reqChar), and the Password (pass)
+        //    // This foreach iterates through each line in the file and separates
+        //    //  the necessary values into their own variables.
+        //    foreach (string line in inputLines)
+        //    {
+        //        // Split each line at each space
+        //        string[] phrase = line.Split(' ');
+        //        // Now I have an array of one of the lines in the file.
+        //        // At phrase[0] is the requirements (1-3).
+        //        // At phrase[1] is the required character (a).
+        //        // At phrase[2] is the actual password (abcde).
 
-                int[] reqs = GetParams(phrase[0].Split('-')); //DONE
-                char reqChar = phrase[1][0]; // DONE
-                string pass = phrase[2].ToString(); // DONE
+        //        // Split the phrase into three sections: Requirements(reqs), Required Character(reqChar), and the Password (pass)
 
-                // So now I have three variables: reqs, an int array; reqChar, a char; and pass, a string.
-                // Now I must validate each line.
+        //        int[] reqs = GetParams(phrase[0].Split('-')); //DONE
+        //        char reqChar = phrase[1][0]; // DONE
+        //        string pass = phrase[2].ToString(); // DONE
 
-                if (Validate(reqs, reqChar, pass))
-                {
-                    validPasswords++;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid pw");
-                }
-                Console.WriteLine(validPasswords);
-            }
-            Console.ReadKey();
-        }
+        //        // So now I have three variables: reqs, an int array; reqChar, a char; and pass, a string.
+        //        // Now I must validate each line.
+
+        //        if (Validate(reqs, reqChar, pass))
+        //        {
+        //            validPasswords++;
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine("Invalid pw");
+        //        }
+        //        Console.WriteLine(validPasswords);
+        //    }
+        //    Console.ReadKey();
+        //}
 
 
         // Takes a string array and outputs an int array.
@@ -117,7 +164,8 @@ namespace Day_02
         }
 
 
-        // This method takes a char and a string and returns the number of times the char appears within the string.
+        // This method takes a char and a string and returns the number of times the char
+        // appears within the string.
         public int numMatchingChars(char c, string pass)
         {
             // For each character in pass, evaluate whether it equates to c or not.
