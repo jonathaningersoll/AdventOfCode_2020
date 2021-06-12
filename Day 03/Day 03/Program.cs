@@ -9,7 +9,7 @@ namespace Day_03
     {
         static void Main(string[] args)
         {
-            App app = new App(new TobogganTrajectoryService());
+            App app = new App(new TobogganTrajectoryService(), new TobogganTrajectoryInput());
             app.RunUI();
         }
     }

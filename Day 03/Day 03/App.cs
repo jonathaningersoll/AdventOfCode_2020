@@ -7,9 +7,11 @@ namespace Day_03
 {
     public class App
     {
-        private readonly TobogganTrajectoryService _service;
-        public App(TobogganTrajectoryService service)
+        private readonly ITobogganTrajectoryService _service;
+        private readonly ITobogganTrajectoryInput _input;
+        public App(ITobogganTrajectoryService service, ITobogganTrajectoryInput input)
         {
+            _input = input;
             _service = service;
         }
         public void RunUI()
@@ -26,9 +28,9 @@ namespace Day_03
         // UI for selecting which part of the puzzle to run
         public void Ui()
         {
-            Console.WriteLine("Which program would you like to run?\n" +
-                "1. Part one\n" +
-                "2. Part two");
+            Console.WriteLine("Would you like to calculate how many trees you would hit given a particular trajectory?\n" +
+                "1. Yes\n" +
+                "2. No");
             switch (Console.ReadLine())
             {
                 case "1":
@@ -36,17 +38,13 @@ namespace Day_03
                         bool runProgram = true;
                         while (runProgram)
                         {
-                            runProgram = TreesPartOne();
+                            runProgram = TobogganTrajectory();
                         }
                         break;
                     }
                 case "2":
                     {
-                        bool runProgram = true;
-                        while (runProgram)
-                        {
-                            runProgram = TreesPartTwo();
-                        }
+                        Console.WriteLine("Exiting. Press any key to continue...");
                         break;
                     }
                 default:
@@ -59,6 +57,49 @@ namespace Day_03
             }
         }
 
+
+        public bool TobogganTrajectory()
+        {
+            bool cont = false;
+            Console.WriteLine("How far to the right do you need to travel for every line?");
+            int rise = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine("How many lines down would you like to go?");
+            int run = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Total trees: {_service.TreeCalculator(_input.Input, rise, run)}.");
+            Console.WriteLine("Would you like to run the program again [y/n]?");
+            switch (Console.ReadLine())
+            {
+                case "y":
+                    {
+                        cont = true;
+                        break;
+                    }
+                case "n":
+                    {
+                        cont = false;
+                        break;
+                    }
+                default:
+                    {
+                        Console.WriteLine("Please enter y or n...");
+                        break;
+                    }
+            }
+            return cont;
+        }
+
+
+
+
+
+
+
+
+
+
+        // OLD CODE:
         public bool TreesPartTwo()
         {
             bool cont = false;
@@ -91,37 +132,6 @@ namespace Day_03
             return cont;
         }
 
-        public bool TreesPartOne()
-        {
-            bool cont = false;
-            Console.WriteLine("How far to the right do you need to travel for every line?");
-            int run = Int32.Parse(Console.ReadLine());
-
-            Console.WriteLine("How many lines down would you like to go?");
-            int rise = Int32.Parse(Console.ReadLine());
-
-            Console.WriteLine($"Total trees: {_service.TreeCalculator(rise, run)}.");
-            Console.WriteLine("Would you like to run the program again [y/n]?");
-            switch (Console.ReadLine())
-            {
-                case "y":
-                    {
-                        cont = true;
-                        break;
-                    }
-                case "n":
-                    {
-                        cont = false;
-                        break;
-                    }
-                default:
-                    {
-                        Console.WriteLine("Please enter y or n...");
-                        break;
-                    }
-            }
-            return cont;
-        }
 
         public bool TreesPartOneOld()
         {
