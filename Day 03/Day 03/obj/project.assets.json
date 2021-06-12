@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jonat\\source\\repos\\AdventOfCode_2020\\Day 03\\Day 03\\Day 03.csproj",
-      "projectName": "Day 03",
-      "projectPath": "C:\\Users\\jonat\\source\\repos\\AdventOfCode_2020\\Day 03\\Day 03\\Day 03.csproj",
+      "projectUniqueName": "C:\\Users\\jonat\\source\\repos\\AdventOfCode_2020\\Day 03\\Day 03\\Day 03_TobogganTrajectory.csproj",
+      "projectName": "Day 03_TobogganTrajectory",
+      "projectPath": "C:\\Users\\jonat\\source\\repos\\AdventOfCode_2020\\Day 03\\Day 03\\Day 03_TobogganTrajectory.csproj",
       "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\jonat\\source\\repos\\AdventOfCode_2020\\Day 03\\Day 03\\obj\\",
       "projectStyle": "PackageReference",
