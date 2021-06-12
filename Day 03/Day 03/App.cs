@@ -7,6 +7,11 @@ namespace Day_03
 {
     public class App
     {
+        private readonly TobogganTrajectoryService _service;
+        public App(TobogganTrajectoryService service)
+        {
+            _service = service;
+        }
         public void RunUI()
         {
             Run();
@@ -87,6 +92,38 @@ namespace Day_03
         }
 
         public bool TreesPartOne()
+        {
+            bool cont = false;
+            Console.WriteLine("How far to the right do you need to travel for every line?");
+            int run = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine("How many lines down would you like to go?");
+            int rise = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Total trees: {_service.TreeCalculator(rise, run)}.");
+            Console.WriteLine("Would you like to run the program again [y/n]?");
+            switch (Console.ReadLine())
+            {
+                case "y":
+                    {
+                        cont = true;
+                        break;
+                    }
+                case "n":
+                    {
+                        cont = false;
+                        break;
+                    }
+                default:
+                    {
+                        Console.WriteLine("Please enter y or n...");
+                        break;
+                    }
+            }
+            return cont;
+        }
+
+        public bool TreesPartOneOld()
         {
             bool cont = false;
             // read the file into a list
