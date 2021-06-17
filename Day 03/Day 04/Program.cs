@@ -6,7 +6,7 @@ namespace Day_04
     {
         static void Main(string[] args)
         {
-            DayFour app = new DayFour();
+            DayFour app = DayFour.FactoryMethod();
             app.App();
         }
     }
