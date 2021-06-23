@@ -8,142 +8,133 @@ namespace Day_05
 {
     class DayFive
     {
+        private readonly BinaryBoardingService _service;
+        private readonly BinaryBoardingInput _input;
+        private List<BoardingPass> BoardingPasses;
+        // private readonly BinaryBoardingService _service;
+
+        public bool ContinueRunning { get; set; } = true;
+        //public DayFive(BinaryBoardingService service)
+        //{
+        //    _service = service;
+        //}
+
+        public DayFive()
+        {
+            _input = new BinaryBoardingInput();
+            _service = new BinaryBoardingService();
+        }
+
         public void App()
         {
-            UI();
+            while (ContinueRunning)
+            {
+                UI();
+            }
         }
         
         private void UI()
         {
-            List<string> input = File.ReadAllLines(@"./input.txt").Select(n => n).ToList();
-            List<int> seatIds = new List<int>();
-
-            // Operation on each line of the file:
-            for (int i = 0; i < input.Count; i++)
+            Console.WriteLine("Please select an option: \n" +
+                "1. Determine the highest seat ID on all the boarding passes?\n" +
+                "2. What's is the ID of your seat?\n" +
+                "3. Load Passports\n" +
+                "4. Delete Passports\n" +
+                "5. View Passport Count\n" +
+                "6. Exit");
+            switch (Console.ReadLine())
             {
-                string line = input[i];
-                var columns = new List<char>() { input[i][7], input[i][8], input[i][9] };
-                int row = 0;
-                int seat = 0;
-
-                // Operate on the first seven characters (0-6) in an individual line
-                for(int bin = 0; bin < 7; bin++)
-                {
-                        row += TranslateToBinary(line[bin], bin);
-                }
-                seat = Columns(columns);
-                int seatId = (row * 8) + seat;
-                Console.WriteLine($"Row: {row}, Seat:{seat}, Seat ID: {seatId}");
-                seatIds.Add(seatId);
-            }
-
-            Console.WriteLine(seatIds.Max());
-
-            // PART TWO:
-            seatIds.Sort();
-            seatIds.ForEach((x) => Console.WriteLine(x));
-            for(int i = 1; i < seatIds.Count(); i++)
-            {
-                if(seatIds[i] - i == seatIds[0])
-                {
-                    Console.WriteLine("Consecutive number");
-                }
-                else
-                {
-                    Console.WriteLine($"*****************************************{seatIds[i]}");
-                }
-            }
-        }
-
-        // ROW FINDING METHODS //
-        public int EvaluateIndex(int num)
-        {
-            switch (num)
-            {
-                case 0:
+                case "1": // GET Highest Boarding Pass Seat ID
                     {
-                        num = 64;
+                        Console.Clear();
+                        if (BoardingPasses != null)
+                        {
+                            BoardingPasses = _service.GetBoardingPasses();
+                            Console.WriteLine(_service.GetHighestSeatId(BoardingPasses));
+                            Console.ReadKey();
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Boarding Pass list is empty");
+                            Console.ReadKey();
+                            break;
+                        }
+                    }
+                case "2": // GET missing seat ID
+                    {
+                        Console.Clear();
+                        if(BoardingPasses != null)
+                        {
+                            Console.WriteLine(_service.GetMissingSeatId(BoardingPasses));
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("No boarding passes have been created!");
+                        }
+                        Console.ReadKey();
                         break;
                     }
-                case 1:
+                case "3": // CREATE Boarding Pass List
                     {
-                        num = 32;
-                        break;
+                        if (_service.CreateBoardingPasses(_input.Input))
+                        {
+                            Console.Clear();
+                            BoardingPasses = _service.GetBoardingPasses();
+                            Console.WriteLine("Boarding pass list created!");
+                            Console.ReadKey();
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Error loading boarding passes");
+                            Console.ReadKey();
+                            break;
+                        }
                     }
-                case 2:
+                case "4": // DELETE Boarding Passes
                     {
-                        num = 16;
-                        break;
+                        if (_service.DeleteBoardingPasses())
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Boarding pass list deleted!");
+                            Console.ReadKey();
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Error deleting boarding passes");
+                            Console.ReadKey();
+                            break;
+                        }
                     }
-                case 3:
+                case "5": // GET Boarding Pass Count
                     {
-                        num = 8;
-                        break;
+                        if(BoardingPasses != null)
+                        {
+                            Console.WriteLine(BoardingPasses.Count());
+                            Console.ReadKey();
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Boarding pass list is empty!");
+                            break;
+                        }
                     }
-                case 4:
+                case "6":
                     {
-                        num = 4;
-                        break;
-                    }
-                case 5:
-                    {
-                        num = 2;
-                        break;
-                    }
-                case 6:
-                    {
-                        num = 1;
+                        ContinueRunning = false;
                         break;
                     }
                 default:
                     {
+                        Console.Clear();
+                        Console.WriteLine("Please select a valid option");
                         break;
                     }
             }
-            return num;
-        }
-        public int TranslateToBinary(char direction, int index)
-        {
-            int amount = 0;
-            switch (direction)
-            {
-                case 'B':
-                    {
-                        amount += EvaluateIndex(index);
-                        break;
-                    }
-                case 'F':
-                    {
-                        amount += 0;
-                        break;
-                    }
-                default:
-                    {
-                        break;
-                    }
-            }
-            return amount;
-        }
-
-        // SEAT FINDING METHODS //
-        public int Columns(List<char> columns)
-        {
-            var col = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7 };
-            foreach(char direction in columns)
-            {
-                int newColAmount = col.Count() / 2;
-                
-                if (direction == 'R')
-                {
-                    col.RemoveRange(0, newColAmount);
-                }
-                else
-                {
-                    col.RemoveRange(newColAmount, newColAmount);
-                }
-            }
-
-            return col[0];
         }
     }
 }
