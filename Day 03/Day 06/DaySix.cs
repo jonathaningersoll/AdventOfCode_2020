@@ -6,8 +6,13 @@ using System.Text;
 
 namespace Day_06
 {
-    class DaySix
+    public class DaySix
     {
+        private readonly ICustomCustoms _repo = new CustomCustomsRepository();
+        public DaySix(ICustomCustoms repo)
+        {
+            _repo = repo;
+        }
         public void App()
         {
             UI();
@@ -15,6 +20,18 @@ namespace Day_06
 
         private void UI()
         {
+            _repo.BuildGroups();
+
+
+
+
+
+
+
+
+
+
+
             List<string> input = File.ReadAllLines(@"./sampleinput.txt").Select(n => n).ToList();
             var answerSum = new List<int>();
             
@@ -35,9 +52,9 @@ namespace Day_06
                     for(int index = 0; i < personAnswer.Count(); index++)
                     {
 
-                        var group[] = personAnswer[0].Intersect(personAnswer[index]);
+                        var group = personAnswer[0].Intersect(personAnswer[index]);
                     }
-                    Console.WriteLine(personAnswer[0]);
+                    //Console.WriteLine(personAnswer[0]);
                     personAnswer.Clear();
 
                 }
