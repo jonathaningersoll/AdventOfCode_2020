@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Day_06
 {
-    public class Group
+    public class IndividualAnswers
     {
-        public List<IndividualAnswers> Answers { get; set; }
+        public List<char> Answer { get; set; }
     }
 }

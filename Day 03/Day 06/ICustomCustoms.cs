@@ -7,5 +7,6 @@ namespace Day_06
     public interface ICustomCustoms
     {
         int BuildGroups();
+        int DidEveryoneAnswerAnyQuestion();
     }
 }

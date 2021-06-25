@@ -20,11 +20,9 @@ namespace Day_06
 
         private void UI()
         {
-            _repo.BuildGroups();
+            // var groupList = _repo.BuildGroups();
 
-
-
-
+            Console.WriteLine(_repo.DidEveryoneAnswerAnyQuestion());
 
 
 
