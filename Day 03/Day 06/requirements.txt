@@ -1,0 +1,18 @@
+﻿a form asks 26 yes/no questions
+
+	form { 
+		bool QuestionA {get; set;}
+		bool QuestionB {get; set;}
+		bool QuestionC {get; set;}
+		...
+		bool QuestionZ{get; set;}
+	}
+
+if anyone in the group answers yes, then the collective answer for that group is yes.
+
+	group {
+		Form Form {get;set;}
+		List<string> Answers {get; set;}
+	}
+
+Get the union of all the answers in a group.

@@ -6,7 +6,7 @@ namespace Day_06
     {
         static void Main(string[] args)
         {
-            DaySix app = new DaySix();
+            DaySix app = new DaySix(new CustomCustomsRepository());
             app.App();
         }
     }
