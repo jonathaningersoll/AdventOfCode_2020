@@ -8,11 +8,6 @@ namespace Day_06
 {
     public class CustomCustomsRepository : ICustomCustoms
     {
-
-        public List<Group> Groups { get; set; } = new List<Group>();
-        public List<IndividualAnswers> Answers { get; set; } = new List<IndividualAnswers>();
-
-
         public List<List<char>> GroupAnswers { get; set; } = new List<List<char>>();
         public List<char> IndividualAnswers { get; set; } = new List<char>();
         public int Number { get; set; }
